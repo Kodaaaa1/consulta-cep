@@ -1,4 +1,3 @@
-```javascript
 const formulario = document.getElementById("formulario-cep");
 const campoCEP = document.getElementById("cep");
 const mensagem = document.getElementById("mensagem");
@@ -9,8 +8,10 @@ formulario.addEventListener("submit", async function (evento) {
 
     const cep = campoCEP.value.replace(/\D/g, "");
 
+    console.log("CEP digitado:", cep);
+
     if (cep.length !== 8) {
-        mensagem.textContent = "Digite um CEP válido com 8 números.";
+        mensagem.textContent = "Digite um CEP com 8 números.";
         resultado.hidden = true;
         return;
     }
@@ -23,28 +24,34 @@ formulario.addEventListener("submit", async function (evento) {
             `https://viacep.com.br/ws/${cep}/json/`
         );
 
-        if (!resposta.ok) {
-            throw new Error("Falha na consulta.");
-        }
+        console.log("Status da consulta:", resposta.status);
 
         const dados = await resposta.json();
+        console.log("Dados recebidos:", dados);
 
         if (dados.erro) {
             mensagem.textContent = "CEP não encontrado.";
             return;
         }
 
-        document.getElementById("rua").value = dados.logradouro || "";
-        document.getElementById("bairro").value = dados.bairro || "";
-        document.getElementById("cidade").value = dados.localidade || "";
-        document.getElementById("estado").value = dados.uf || "";
+        document.getElementById("rua").value =
+            dados.logradouro || "";
+
+        document.getElementById("bairro").value =
+            dados.bairro || "";
+
+        document.getElementById("cidade").value =
+            dados.localidade || "";
+
+        document.getElementById("estado").value =
+            dados.uf || "";
 
         resultado.hidden = false;
-        mensagem.textContent = "Endereço encontrado com sucesso!";
+        mensagem.textContent = "Endereço encontrado!";
 
     } catch (erro) {
-        mensagem.textContent =
-            "Não foi possível consultar o CEP. Tente novamente.";
+        console.error("Erro na consulta:", erro);
+        mensagem.textContent = "Erro ao consultar o CEP.";
     }
 });
 ```
