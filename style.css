@@ -1,44 +1,71 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    min-height: 100vh;
+    background-color: #f1f4f8;
     color: #212529;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color: #0d6efd;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+main {
+    max-width: 1000px;
 }
 
 .card {
-    border-radius: 14px;
+    border: none;
+    border-radius: 10px;
     overflow: hidden;
 }
 
 .card-header {
-    background: linear-gradient(135deg, #0d6efd, #084298) !important;
+    background-color: #ffffff;
+    padding: 20px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.card-body {
+    padding: 25px;
 }
 
 .form-label {
     font-weight: 600;
-    color: #343a40;
 }
 
 .form-control {
-    padding: 10px 12px;
-    border-radius: 7px;
-    border: 1px solid #ced4da;
+    min-height: 42px;
 }
 
-.form-control:focus {
-    border-color: #86b7fe;
-    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+.btn {
+    padding: 10px 18px;
 }
 
-hr {
-    border-color: #dee2e6;
+#mensagem:empty {
+    display: none;
 }
 
-#mensagem {
-    font-weight: 600;
+footer {
+    background-color: #e2e6ea;
+    color: #495057;
+    margin-top: 30px;
 }
 
 @media (max-width: 576px) {
     .card-body {
-        padding: 20px !important;
+        padding: 16px;
+    }
+
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    .d-flex.gap-2 {
+        flex-wrap: wrap;
     }
 }
