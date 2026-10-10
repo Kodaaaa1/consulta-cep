@@ -1,202 +1,44 @@
-/* ==============================
-   CONFIGURAÇÕES GERAIS
-============================== */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #f1f5f9;
-    color: #1e293b;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    line-height: 1.6;
+    color: #212529;
 }
-
-/* ==============================
-   CABEÇALHO
-============================== */
-
-header {
-    background: linear-gradient(135deg, #1d4ed8, #2563eb);
-    color: #ffffff;
-    text-align: center;
-    padding: 40px 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-}
-
-header h1 {
-    font-size: 2.2rem;
-    margin-bottom: 8px;
-}
-
-header p {
-    font-size: 1rem;
-    color: #dbeafe;
-}
-
-/* ==============================
-   CONTEÚDO PRINCIPAL
-============================== */
-
-.container {
-    width: 100%;
-    max-width: 900px;
-    margin: 35px auto;
-    padding: 0 20px;
-    flex: 1;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
-    align-items: start;
-}
-
-/* ==============================
-   CARTÕES
-============================== */
 
 .card {
-    background: #ffffff;
-    padding: 28px;
     border-radius: 14px;
-    box-shadow: 0 5px 20px rgba(15, 23, 42, 0.07);
-    border: 1px solid #e2e8f0;
+    overflow: hidden;
 }
 
-.card h2 {
-    font-size: 1.35rem;
-    color: #1d4ed8;
-    margin-bottom: 22px;
-    padding-bottom: 12px;
-    border-bottom: 2px solid #dbeafe;
+.card-header {
+    background: linear-gradient(135deg, #0d6efd, #084298) !important;
 }
 
-/* ==============================
-   CAMPOS DO FORMULÁRIO
-============================== */
-
-.campo {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 18px;
+.form-label {
+    font-weight: 600;
+    color: #343a40;
 }
 
-.campo label {
-    font-size: 0.95rem;
-    font-weight: bold;
-    margin-bottom: 7px;
-    color: #334155;
+.form-control {
+    padding: 10px 12px;
+    border-radius: 7px;
+    border: 1px solid #ced4da;
 }
 
-.campo input {
-    width: 100%;
-    padding: 12px 14px;
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
-    font-size: 1rem;
-    color: #1e293b;
-    background: #ffffff;
-    outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
+.form-control:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
 }
 
-.campo input:focus {
-    border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+hr {
+    border-color: #dee2e6;
 }
-
-.campo input[readonly] {
-    background: #f8fafc;
-    color: #475569;
-    cursor: default;
-}
-
-/* ==============================
-   BOTÃO DE CONSULTA
-============================== */
-
-button {
-    width: 100%;
-    padding: 13px 18px;
-    background: #2563eb;
-    color: #ffffff;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.2s;
-}
-
-button:hover {
-    background: #1d4ed8;
-    transform: translateY(-1px);
-}
-
-button:active {
-    transform: translateY(0);
-}
-
-button:focus-visible {
-    outline: 3px solid #93c5fd;
-    outline-offset: 3px;
-}
-
-/* ==============================
-   MENSAGENS
-============================== */
 
 #mensagem {
-    margin-top: 14px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    overflow-wrap: anywhere;
+    font-weight: 600;
 }
 
-/* ==============================
-   RODAPÉ
-============================== */
-
-footer {
-    margin-top: auto;
-    background: #0f172a;
-    color: #cbd5e1;
-    text-align: center;
-    padding: 22px 15px;
-    font-size: 0.85rem;
-}
-
-footer p + p {
-    margin-top: 4px;
-}
-
-/* ==============================
-   RESPONSIVIDADE
-============================== */
-
-@media (max-width: 700px) {
-    header {
-        padding: 30px 15px;
-    }
-
-    header h1 {
-        font-size: 1.8rem;
-    }
-
-    .container {
-        grid-template-columns: 1fr;
-        margin: 22px auto;
-        padding: 0 15px;
-        gap: 20px;
-    }
-
-    .card {
-        padding: 22px;
+@media (max-width: 576px) {
+    .card-body {
+        padding: 20px !important;
     }
 }
-```
